@@ -74,21 +74,24 @@ export interface Video {
     name: string;
     url: string;
   };
-  video_files: {
-    id: number;
-    quality: 'hd' | 'sd' | 'hls';
-    file_type: 'string';
-    width: number | null;
-    height: number | null;
-    link: string;
-    fps: number | null;
-  }[];
+  video_files: VideoFile[];
   video_pictures: {
     id: number;
     picture: string;
     nr: number;
   }[];
 }
+
+export interface VideoFile {
+  id: number;
+  quality: 'hd' | 'sd' | 'hls';
+  file_type: 'string';
+  width: number | null;
+  height: number | null;
+  link: string;
+  fps: number | null;
+}
+
 export declare type Videos = PaginationObject & {
   total_results?: number;
   videos?: Video[];
