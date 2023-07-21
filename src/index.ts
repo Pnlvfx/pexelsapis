@@ -36,7 +36,7 @@ const pexelsapis = (apiKey: string) => {
         headers,
       });
       const data: Videos = await res.json();
-      if (!res.ok) throw new Error(`Pexels: ${data.status} ${data.error}`);
+      if (!res.ok || !data.videos) throw new Error(`Pexels: ${data.status} ${data.error}`);
       return data.videos;
     },
     downloadVideo: (url: string, output: string) => {
@@ -47,10 +47,9 @@ const pexelsapis = (apiKey: string) => {
               url = res.headers.location as string;
               downloadVideo(url);
               return;
-            }
-            if (res.statusCode !== 200) {
+            } else if (res.statusCode !== 200) {
               res.resume();
-              reject('Something went wrong when downloading a video from Pexels');
+              return reject('Something went wrong when downloading a video from Pexels');
             }
             res.pipe(fs.createWriteStream(output));
             res.on('close', () => {
