@@ -1,13 +1,13 @@
 import fs from 'node:fs';
 import https from 'node:https';
-import { PexelsImageOptions, PexelsVideoOptions, Photo, PhotosWithTotalResults, Video, Videos } from './types';
+import { PexelsImageOptions, PexelsVideoOptions, PhotosWithTotalResults, Videos } from './types';
 
 const pexelsapis = (apiKey: string) => {
   const headers = {
     Authorization: apiKey,
   };
   return {
-    getImage: async (text: string, options?: PexelsImageOptions): Promise<Photo[]> => {
+    getImage: async (text: string, options?: PexelsImageOptions) => {
       let url = `https://api.pexels.com/v1/search?query=${text}`;
       if (options) {
         const usedOptions = Object.entries(options).filter(([, value]) => value !== undefined);
@@ -23,7 +23,7 @@ const pexelsapis = (apiKey: string) => {
       if (!res.ok) throw new Error('Pexels API error.');
       return data.photos;
     },
-    getVideo: async (text: string, options?: PexelsVideoOptions): Promise<Video[] | undefined> => {
+    getVideo: async (text: string, options?: PexelsVideoOptions) => {
       let url = `https://api.pexels.com/videos/search?query=${text}`;
       if (options) {
         const usedOptions = Object.entries(options).filter(([, value]) => value !== undefined);
