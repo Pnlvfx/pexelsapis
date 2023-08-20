@@ -49,7 +49,7 @@ const pexelsapis = (apiKey: string) => {
               return;
             } else if (res.statusCode !== 200) {
               res.resume();
-              return reject('Something went wrong when downloading a video from Pexels');
+              return reject(`Something went wrong when downloading a video from Pexels. ${res.statusCode} ${res.statusMessage}`);
             }
             res.pipe(fs.createWriteStream(output));
             res.on('close', () => {
