@@ -1,6 +1,6 @@
 import { PexelsImageOptions, PexelsVideoOptions, PhotosWithTotalResults, Videos } from './types';
 
-const pexelsapis = (apiKey: string) => {
+export const pexelsapis = (apiKey: string) => {
   const headers = {
     Authorization: apiKey,
   };
