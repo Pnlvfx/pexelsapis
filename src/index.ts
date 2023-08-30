@@ -8,8 +8,8 @@ const pexelsapis = (apiKey: string) => {
     getImage: async (text: string, options?: PexelsImageOptions) => {
       let url = `https://api.pexels.com/v1/search?query=${text}`;
       if (options) {
-        const usedOptions = Object.entries(options).filter(([, value]) => value !== undefined);
-        for (const [key, value] of usedOptions) {
+        for (const [key, value] of Object.entries(options)) {
+          if (value === undefined) continue;
           url += `&${key}=${value}`;
         }
       }
@@ -24,8 +24,8 @@ const pexelsapis = (apiKey: string) => {
     getVideo: async (text: string, options?: PexelsVideoOptions) => {
       let url = `https://api.pexels.com/videos/search?query=${text}`;
       if (options) {
-        const usedOptions = Object.entries(options).filter(([, value]) => value !== undefined);
-        for (const [key, value] of usedOptions) {
+        for (const [key, value] of Object.entries(options)) {
+          if (value === undefined) continue;
           url += `&${key}=${value}`;
         }
       }
