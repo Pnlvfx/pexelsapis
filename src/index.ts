@@ -1,4 +1,4 @@
-import { PexelsImageOptions, PexelsVideoOptions, PhotosWithTotalResults, Videos } from './types';
+import { PexelsImageOptions, PexelsVideoOptions, PhotosWithTotalResults, Videos } from './types/index.js';
 
 const pexelsapis = (apiKey: string) => {
   const headers = {
