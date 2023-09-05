@@ -41,3 +41,5 @@ const pexelsapis = (apiKey: string) => {
 };
 
 export default pexelsapis;
+
+console.log(process.argv[2]);
