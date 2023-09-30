@@ -16,6 +16,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  settings: {
+    'import/resolver': {
+      typescript: true,
+      node: true,
+    },
+  },
   env: {
     es6: true,
     node: true,
@@ -34,7 +40,6 @@ module.exports = {
     'no-var': 'error',
     semi: 'error',
     indent: ['error', 2, { SwitchCase: 1 }],
-    'no-await-in-loop': 'error',
     'no-multi-spaces': 'error',
     'no-empty-function': 'error',
     'no-floating-decimal': 'error',
@@ -54,8 +59,9 @@ module.exports = {
     'no-multiple-empty-lines': 'error',
     'no-unsafe-negation': 'error',
     'prefer-const': 'error',
-    'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
 
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     'unicorn/prevent-abbreviations': 'off',
     'unicorn/catch-error-name': 'off',
     'import/no-unresolved': 'off',
