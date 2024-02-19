@@ -45,3 +45,5 @@ const pexelsapis = (apiKey: string) => {
 };
 
 export default pexelsapis;
+
+export type {Collection, ErrorResponse, Medium, PaginationParams, Params, PexelsImageOptions, PexelsVideoOptions, Photo, Photos, PhotosWithTotalResults, Video, VideoFile, VideoFilterParams, Videos} from './types/index.js';
