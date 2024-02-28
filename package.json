@@ -2,9 +2,15 @@
   "name": "pexelsapis",
   "description": "Node interaction with www.pexels.com.",
   "version": "2023.8.29",
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/esm/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Simone Gauli",
+    "email": "simonegauli@gmail.com"
+  },
   "exports": {
     ".": {
       "types": "./dist/esm/index.d.ts",
@@ -16,15 +22,9 @@
       "require": "./*"
     }
   },
-  "type": "module",
-  "license": "MIT",
-  "author": {
-    "name": "Simone Gauli",
-    "email": "simonegauli@gmail.com"
-  },
   "scripts": {
     "generate:package.json": "tsx ./tools/generate-commonjs-package-json.ts dist/cjs/package.json",
-    "dev": "tsc -w --outDir dist/esm & node --watch ./dist/esm/index.js",
+    "dev": "tsc -w & node --watch ./dist/esm/index.js",
     "start": "node .",
     "lint": "eslint ./src",
     "build": "rimraf dist && npm run lint && npm run build:esm && npm run build:cjs && npm run generate:package.json",
@@ -39,10 +39,10 @@
     "README.md"
   ],
   "devDependencies": {
-    "@types/node": "^20.11.19",
-    "@typescript-eslint/eslint-plugin": "^7.0.2",
-    "@typescript-eslint/parser": "^7.0.2",
-    "eslint": "^8.56.0",
+    "@types/node": "^20.11.22",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
