@@ -1,5 +1,5 @@
 export interface PexelsVideoOptions {
-  per_page?: number | number;
+  per_page?: number;
   orientation?: 'landscape' | 'portrait' | 'square';
   size?: 'large' | 'medium' | 'small';
   locale?: string;
@@ -13,9 +13,8 @@ export interface PexelsImageOptions extends PexelsVideoOptions {
 export interface ErrorResponse {
   error: string;
 }
-export interface Params {
-  [key: string]: string | number | undefined;
-}
+export type Params = Record<string, string | number | undefined>;
+
 export interface PaginationParams extends Params {
   per_page?: number;
   page?: number;
