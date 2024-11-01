@@ -1,24 +1,28 @@
 export interface ErrorResponse {
   error: string;
 }
+
 export type Params = Record<string, string | number | undefined>;
 
 export interface PaginationParams extends Params {
   per_page?: number;
   page?: number;
 }
+
 export interface VideoFilterParams extends Params {
   min_width?: number;
   max_width?: number;
   min_duration?: number;
   max_duration?: number;
 }
+
 interface PaginationObject {
   url?: string;
   page: number;
   per_page: number;
   next_page: number;
 }
+
 export interface Photo {
   id: number;
   width: number;
@@ -41,12 +45,21 @@ export interface Photo {
     tiny: string;
   };
 }
-export type Photos = PaginationObject & {
-  photos: Photo[];
-};
-export type PhotosWithTotalResults = Photos & {
-  total_results: number;
-};
+
+export type Photos = PaginationObject & { photos: Photo[] };
+
+export type PhotosWithTotalResults = Photos & { total_results: number };
+
+export interface VideoFile {
+  id: number;
+  quality: 'hd' | 'sd' | 'hls';
+  file_type: 'string';
+  width: number | null;
+  height: number | null;
+  link: string;
+  fps: number | null;
+}
+
 export interface Video {
   id: number;
   width: number;
@@ -69,20 +82,11 @@ export interface Video {
   }[];
 }
 
-export interface VideoFile {
-  id: number;
-  quality: 'hd' | 'sd' | 'hls';
-  file_type: 'string';
-  width: number | null;
-  height: number | null;
-  link: string;
-  fps: number | null;
-}
-
 export type Videos = PaginationObject & {
   total_results: number;
   videos: Video[];
 };
+
 export type Medium = Photo | Video;
 
 export interface Collection {

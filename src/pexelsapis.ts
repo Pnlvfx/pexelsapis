@@ -1,5 +1,5 @@
 import type { PexelsImageOptions, PexelsVideoOptions } from './types/options.js';
-import type { PhotosWithTotalResults, Videos } from './types/response.js';
+import type { Photo, PhotosWithTotalResults, Video, Videos } from './types/response.js';
 import coraline, { getEntries } from 'coraline';
 
 const BASE_URL = 'https://api.pexels.com';
@@ -32,7 +32,12 @@ const pexelsapis = (apiKey: string) => {
     searchVideo: async (id: number) => {
       const res = await fetch(`${BASE_URL}/videos/videos/${id.toString()}`, { headers });
       if (!res.ok || !coraline.isJson(res)) throw new Error(`${res.status.toString()}: ${res.statusText}`);
-      return res.json();
+      return res.json() as Promise<Video>;
+    },
+    searchImage: async (id: number) => {
+      const res = await fetch(`${BASE_URL}/v1/photos/${id.toString()}`, { headers });
+      if (!res.ok || !coraline.isJson(res)) throw new Error(`${res.status.toString()}: ${res.statusText}`);
+      return res.json() as Promise<Photo>;
     },
   };
 };
