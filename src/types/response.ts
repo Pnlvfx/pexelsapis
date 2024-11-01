@@ -1,18 +1,3 @@
-export type PexelsSearchOrientation = 'landscape' | 'portrait' | 'square';
-export type PexelsSearchSize = 'large' | 'medium' | 'small';
-
-export interface PexelsVideoOptions {
-  per_page?: number;
-  orientation?: PexelsSearchOrientation;
-  size?: PexelsSearchSize;
-  locale?: string;
-  page?: number;
-}
-
-export interface PexelsImageOptions extends PexelsVideoOptions {
-  color?: string;
-}
-
 export interface ErrorResponse {
   error: string;
 }
@@ -56,10 +41,10 @@ export interface Photo {
     tiny: string;
   };
 }
-export declare type Photos = PaginationObject & {
+export type Photos = PaginationObject & {
   photos: Photo[];
 };
-export declare type PhotosWithTotalResults = Photos & {
+export type PhotosWithTotalResults = Photos & {
   total_results: number;
 };
 export interface Video {
@@ -94,13 +79,12 @@ export interface VideoFile {
   fps: number | null;
 }
 
-export declare type Videos = PaginationObject & {
-  total_results?: number;
-  videos?: Video[];
-  status?: number;
-  error?: string;
+export type Videos = PaginationObject & {
+  total_results: number;
+  videos: Video[];
 };
-export declare type Medium = Photo | Video;
+export type Medium = Photo | Video;
+
 export interface Collection {
   id: string;
   title: string;
