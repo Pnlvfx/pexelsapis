@@ -1,5 +1,5 @@
-import coraline, { getEntries } from 'coraline';
 import type { PexelsImageOptions, PexelsVideoOptions, PhotosWithTotalResults, Videos } from './types/pexelsapis.js';
+import coraline, { getEntries } from 'coraline';
 
 const pexelsapis = (apiKey: string) => {
   const headers = {
@@ -40,19 +40,4 @@ const pexelsapis = (apiKey: string) => {
 
 export default pexelsapis;
 
-export type {
-  Collection,
-  ErrorResponse,
-  Medium,
-  PaginationParams,
-  Params,
-  PexelsImageOptions,
-  PexelsVideoOptions,
-  Photo,
-  Photos,
-  PhotosWithTotalResults,
-  Video,
-  VideoFile,
-  VideoFilterParams,
-  Videos,
-} from './types/pexelsapis.js';
+export type * from './types/pexelsapis.js';
