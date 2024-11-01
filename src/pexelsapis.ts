@@ -1,4 +1,5 @@
-import type { PexelsImageOptions, PexelsVideoOptions, PhotosWithTotalResults, Videos } from './types/response.js';
+import type { PexelsImageOptions, PexelsVideoOptions } from './types/options.js';
+import type { PhotosWithTotalResults, Videos } from './types/response.js';
 import coraline, { getEntries } from 'coraline';
 
 const BASE_URL = 'https://api.pexels.com';
