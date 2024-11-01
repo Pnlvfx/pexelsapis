@@ -1,9 +1,10 @@
-export type PexelsOrientation = 'landscape' | 'portrait' | 'square';
+export type PexelsSearchOrientation = 'landscape' | 'portrait' | 'square';
+export type PexelsSearchSize = 'large' | 'medium' | 'small';
 
 export interface PexelsVideoOptions {
   per_page?: number;
-  orientation?: PexelsOrientation;
-  size?: 'large' | 'medium' | 'small';
+  orientation?: PexelsSearchOrientation;
+  size?: PexelsSearchSize;
   locale?: string;
   page?: number;
 }
