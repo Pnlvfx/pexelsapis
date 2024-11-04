@@ -45,3 +45,4 @@ const pexelsapis = (apiKey: string) => {
 export default pexelsapis;
 
 export type * from './types/response.js';
+export type * from './types/options.js';
