@@ -10,7 +10,7 @@ describe('pexelsapis', () => {
   it('Should search a videos, then search the same video on the video api.', async () => {
     const { videos } = await client.searchVideos('Cars');
     for (const video of videos) {
-      const singleVideo = await client.searchVideo(video.id);
+      const singleVideo = await client.getVideo(video.id);
       console.log({ singleVideo });
       break;
     }

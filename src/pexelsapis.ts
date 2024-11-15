@@ -29,12 +29,12 @@ const pexelsapis = (apiKey: string) => {
       if (!res.ok || !coraline.isJson(res)) throw new Error(`${res.status.toString()}: ${res.statusText}`);
       return res.json() as Promise<Videos>;
     },
-    searchVideo: async (id: number) => {
+    getVideo: async (id: number) => {
       const res = await fetch(`${BASE_URL}/videos/videos/${id.toString()}`, { headers });
       if (!res.ok || !coraline.isJson(res)) throw new Error(`${res.status.toString()}: ${res.statusText}`);
       return res.json() as Promise<Video>;
     },
-    searchImage: async (id: number) => {
+    getImage: async (id: number) => {
       const res = await fetch(`${BASE_URL}/v1/photos/${id.toString()}`, { headers });
       if (!res.ok || !coraline.isJson(res)) throw new Error(`${res.status.toString()}: ${res.statusText}`);
       return res.json() as Promise<Photo>;
