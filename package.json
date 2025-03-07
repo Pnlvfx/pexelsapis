@@ -12,26 +12,22 @@
   },
   "license": "MIT",
   "type": "module",
-  "main": "./dist/cjs/pexelsapis.js",
-  "module": "./dist/esm/pexelsapis.js",
-  "types": "./dist/esm/pexelsapis.d.ts",
+  "main": "./dist/pexelsapis.js",
+  "module": "./dist/pexelsapis.js",
+  "types": "./dist/pexelsapis.d.ts",
   "exports": {
-    "types": "./dist/esm/pexelsapis.d.ts",
-    "import": "./dist/esm/pexelsapis.js",
-    "require": "./dist/cjs/pexelsapis.js"
+    "types": "./dist/pexelsapis.d.ts",
+    "import": "./dist/pexelsapis.js"
   },
   "scripts": {
     "tsc": "tsc --noEmit true",
-    "generate:package.json": "tsx ./tools/generate-commonjs-package-json.ts dist/cjs/package.json",
-    "unused": "tsx ./tools/unused.ts",
+    "unused": "node ./tools/unused.ts",
     "test": "rimraf coverage && jest --coverage",
     "lint": "eslint",
-    "build": "rimraf dist && eslint && npm run build:esm && npm run build:cjs && npm run generate:package.json",
-    "build:esm": "tsc -p tsconfig.build.json",
-    "build:cjs": "tsc -p tsconfig.build.json --module CommonJS --moduleResolution Node --outDir dist/cjs",
-    "prepack": "npm run build",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run test && eslint"
+    "build": "rimraf dist && eslint && tsc -p tsconfig.build.json",
+    "prepare": "husky",
+    "prepack": "yarn build",
+    "prepublishOnly": "yarn test && eslint"
   },
   "files": [
     "dist",
