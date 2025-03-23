@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { describe, it } from '@jest/globals';
-import pexelsapis from '../src/pexelsapis.js';
+import { pexelsapis } from '../src/pexelsapis.js';
 
 const apiKey = process.env['PEXELS_API_KEY'];
 if (!apiKey) throw new Error('Please provide a pexels api key.');

@@ -5,7 +5,7 @@ import { isJsonResponse } from '@goatjs/core/ease';
 
 const BASE_URL = 'https://api.pexels.com';
 
-const pexelsapis = (apiKey: string) => {
+export const pexelsapis = (apiKey: string) => {
   const headers = {
     Authorization: apiKey,
   };
@@ -42,8 +42,6 @@ const pexelsapis = (apiKey: string) => {
     },
   };
 };
-
-export default pexelsapis;
 
 export type * from './types/response.js';
 export type * from './types/options.js';
