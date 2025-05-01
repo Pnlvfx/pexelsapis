@@ -1,1 +1,0 @@
-yarn up @goatjs/ts-unused-exports@github:Pnlvfx/goatjs#workspace=@goatjs/ts-unused-exports @goatjs/core@github:Pnlvfx/goatjs#workspace=@goatjs/core
