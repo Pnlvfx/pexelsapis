@@ -38,6 +38,7 @@
     "@eslint/js": "^9.26.0",
     "@goatjs/core": "github:Pnlvfx/goatjs#workspace=@goatjs/core",
     "@goatjs/ts-unused-exports": "github:Pnlvfx/goatjs#workspace=@goatjs/ts-unused-exports",
+    "@goatjs/typescript-config": "github:Pnlvfx/typescript-config",
     "@types/node": "^22.15.16",
     "eslint": "^9.26.0",
     "eslint-plugin-sonarjs": "^3.0.2",
