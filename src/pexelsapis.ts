@@ -1,4 +1,4 @@
-import { getEntries } from '@goatjs/core/typed-object';
+import { getEntries } from '@goatjs/core/object';
 import type { PexelsImageOptions, PexelsVideoOptions } from './types/options.js';
 import type { Photo, PhotosWithTotalResults, Video, Videos } from './types/response.js';
 import { isJsonResponse } from '@goatjs/core/ease';
