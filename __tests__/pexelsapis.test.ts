@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-properties */
 /* eslint-disable no-console */
 import { describe, it } from '@jest/globals';
 import { pexelsapis } from '../src/pexelsapis.js';
